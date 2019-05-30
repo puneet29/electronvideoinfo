@@ -1,6 +1,6 @@
 # Electron App Beginner
 
-## Install dependencies
+## Getting Started
 
 1. Install npm (if not):
 
@@ -14,4 +14,9 @@
     cd videoinfo
     npm init
     npm install --save electron
+    ```
+3. Run app:
+
+    ```bash
+    npm run electron
     ```
