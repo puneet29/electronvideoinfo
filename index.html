@@ -14,6 +14,8 @@
         <input type="submit" value="Get info">
     </form>
 
+    <h2 id="durationHeading"></h2>
+
     <script>
         const electron = require('electron'); // makes use of common js module system used by node js
         const { ipcRenderer } = electron;
@@ -22,8 +24,13 @@
             event.preventDefault(); // cancels the event if it is cancellable
             const { path } = document.querySelector('input').files[0]; // path of file
 
+            // Send the path of file to electron app
             ipcRenderer.send('video:submit', path);
-        })
+            // Get the duration from the electron app and display it
+            ipcRenderer.on('video:fetchDuration', (event, duration) => {
+                document.querySelector('#durationHeading').innerHTML = `Video is ${duration} seconds long.`;
+            });
+        });
     </script>
 </body>
 
