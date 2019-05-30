@@ -14,7 +14,7 @@ This app illustrates the way electron app is built. How it uses IPC(Inter Proces
 2. Install electron dependency:
 
     ```bash
-    cd videoinfo
+    cd electronvideoinfo
     npm init
     npm install --save electron
     sudo apt install ffmpeg
