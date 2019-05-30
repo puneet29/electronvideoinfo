@@ -14,7 +14,10 @@
     cd videoinfo
     npm init
     npm install --save electron
+    npm install --save fluent-ffmpeg
+    sudo apt install ffmpeg
     ```
+
 3. Run app:
 
     ```bash

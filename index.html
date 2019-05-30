@@ -13,6 +13,18 @@
         </div>
         <input type="submit" value="Get info">
     </form>
+
+    <script>
+        const electron = require('electron'); // makes use of common js module system used by node js
+        const { ipcRenderer } = electron;
+
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault(); // cancels the event if it is cancellable
+            const { path } = document.querySelector('input').files[0]; // path of file
+
+            ipcRenderer.send('video:submit', path);
+        })
+    </script>
 </body>
 
 </html>
