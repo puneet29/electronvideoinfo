@@ -24,9 +24,9 @@
             event.preventDefault(); // cancels the event if it is cancellable
             const { path } = document.querySelector('input').files[0]; // path of file
 
-            // Send the path of file to electron app
+            // [1st step of IPC]Send the path of file to electron app
             ipcRenderer.send('video:submit', path);
-            // Get the duration from the electron app and display it
+            // [4th step of IPC]Get the duration from the electron app and display it
             ipcRenderer.on('video:fetchDuration', (event, duration) => {
                 document.querySelector('#durationHeading').innerHTML = `Video is ${duration} seconds long.`;
             });
