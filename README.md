@@ -21,7 +21,15 @@ This app illustrates the way electron app is built and handles communication. Ho
     npm install --save fluent-ffmpeg
     ```
 
-3. Run app:
+3. Add electron script to package.json. Replace the existing script code to:
+    
+    ```json
+    "scripts": {
+    "electron": "electron ."
+    }
+    ```
+
+4. Run app:
 
     ```bash
     npm run electron
